@@ -1,15 +1,13 @@
 {
-  "id": "002",
-  "address": {
-    "country": "Internet",
-    "city": "Atlantic",
-    "street": "Milky way"
-  },
-  "username": "franxx",
-  "age": 20,
+  "id": "1",
+  "name": "Mee",
   "hobbies": [
-    "Eat Honey",
-    "Call darling",
-    "Drawing Darling"
-  ]
+    "eat",
+    "sleep"
+  ],
+  "address": {
+    "street": "Tjr",
+    "city": "BGR",
+    "country": "ID"
+  }
 }
