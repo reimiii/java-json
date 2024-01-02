@@ -1,5 +1,6 @@
 package franxxcode.json;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.MapperFeature;
@@ -66,6 +67,21 @@ public class FeatureTest {
         String json = mapper.writeValueAsString(person);
 
         assertNotNull(json);
+        System.out.println(json);
+    }
+
+    @Test
+    void serializationInclusion() throws JsonProcessingException {
+
+        ObjectMapper mapper = new ObjectMapper()
+                .setSerializationInclusion(JsonInclude.Include.NON_NULL);
+
+        Person person = new Person();
+        person.setId("1");
+        person.setName("ZeroTwo");
+
+        String json = mapper.writeValueAsString(person);
+
         System.out.println(json);
     }
 }
