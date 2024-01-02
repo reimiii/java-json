@@ -1,5 +1,6 @@
 package franxxcode.json;
 
+import java.util.Date;
 import java.util.List;
 
 public class Person {
@@ -7,6 +8,10 @@ public class Person {
     private String id;
 
     private String name;
+
+    private Date createdAt;
+
+    private Date updatedAt;
 
     private List<String> hobbies;
 
@@ -20,6 +25,22 @@ public class Person {
         this.name = name;
         this.hobbies = hobbies;
         this.address = address;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 
     public String getId() {
