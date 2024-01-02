@@ -25,4 +25,33 @@ public class JavaBeanTest {
         assertNotNull(json);
         System.out.println(json);
     }
+
+    @Test
+    void readObjectFromJson() throws JsonProcessingException {
+
+        String json = """
+                {
+                  "id": "1",
+                  "name": "Mee",
+                  "hobbies": [
+                    "eat",
+                    "sleep"
+                  ],
+                  "address": {
+                    "street": "Tjr",
+                    "city": "BGR",
+                    "country": "ID"
+                  }
+                }
+                                """;
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        Person person = mapper.readValue(json, Person.class);
+
+        assertEquals("Mee", person.getName());
+        assertEquals("1", person.getId());
+        assertEquals("ID", person.getAddress().getCountry());
+        assertEquals(List.of("eat", "sleep"), person.getHobbies());
+    }
 }
